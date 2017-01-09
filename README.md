@@ -4,7 +4,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 
 After downloading the git repository install Angular CLI 
 
-npm install -g angular-cli
+`npm install -g angular-cli`
 
 Then run npm install to download all the node dependencies. You should be ready to run `ng serve`
 
