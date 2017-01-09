@@ -15,11 +15,12 @@ import { HomeComponent } from './home/home.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
 import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
+import { SearchComponent } from './search/search.component';
 
 const appRoutes: Routes = [
   { path: '', component: AuthComponent, data: { title: 'InviteManager: Login' } },
-  { path: 'home', component: HomeComponent, data: { title: 'InviteManager: Home' } }
-
+  { path: 'home', component: HomeComponent, data: { title: 'InviteManager: Home' } },
+  { path: 'search', component: SearchComponent, data: { title: 'InviteManager: Search Results' } }
 ]
 
 
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     HomeComponent,
     FilterListComponent,
     FeatureBoxComponent,
-    EventTypeComponent
+    EventTypeComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
