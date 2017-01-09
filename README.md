@@ -6,7 +6,7 @@ After downloading the git repository install Angular CLI
 
 `npm install -g angular-cli`
 
-Then run npm install to download all the node dependencies. You should be ready to run `ng serve`
+Then run `npm install` to download all the node dependencies. You should be ready to run `ng serve`
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
