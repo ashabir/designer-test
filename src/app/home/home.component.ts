@@ -9,13 +9,17 @@ import { Type } from './../feature-box/type.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  // type: Type;
+  @Input() type: Type;
+  @Input() type2: string;
 
   constructor(
     // type:Type
     ) {
-      // this.type = type;
+    // this.type = 'string';
     console.log('home const');
+    console.log(this.type);
+    this.type2 = 'blah';
+    console.log("Value of typ2: ", this.type2);
    }
 
   ngOnInit() {

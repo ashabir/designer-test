@@ -11,12 +11,11 @@ export class FeatureBoxComponent implements OnInit {
   @Input() type: string;
   
   constructor() { 
-    
     console.log('featBox constructor', this.type);
   }
 
   ngOnInit() {
-    console.log('featBox onInit');
+    console.log('featBox onInit', this.type);
   }
 
 }
