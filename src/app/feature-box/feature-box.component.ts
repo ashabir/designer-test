@@ -8,7 +8,7 @@ import { Type } from './../feature-box/type.model';
   styleUrls: ['./feature-box.component.css']
 })
 export class FeatureBoxComponent implements OnInit {
-  @Input() type: string;
+  @Input() type: Type;
   
   constructor() { 
     console.log('featBox constructor', this.type);

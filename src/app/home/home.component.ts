@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { FeatureBoxComponent } from './../feature-box/feature-box.component';
 import { Type } from './../feature-box/type.model';
+import { EventType } from './../event-type/event-type.model'
 
 @Component({
   selector: 'app-home',
@@ -10,16 +11,12 @@ import { Type } from './../feature-box/type.model';
 })
 export class HomeComponent implements OnInit {
   @Input() type: Type;
-  @Input() type2: string;
+  // eventTypes: EventType[];
+  eventTypes: string[];
 
-  constructor(
-    // type:Type
-    ) {
-    // this.type = 'string';
-    console.log('home const');
-    console.log(this.type);
-    this.type2 = 'blah';
-    console.log("Value of typ2: ", this.type2);
+  
+  constructor( ) {
+    this.eventTypes = ['sports', 'company', 'dining', 'concerts', 'packages', 'theater'];
    }
 
   ngOnInit() {

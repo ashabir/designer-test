@@ -1,10 +1,10 @@
 export class Type {
     title: string;
-    imageURL: string;
+    imageUrl: string;
 
-    constructor(title: string, imageURL: string){
+    constructor(title: string, imageUrl: string){
         this.title = title;
-        this.imageURL = imageURL;
+        this.imageUrl = imageUrl;
 
         console.log('TYPE');
     }

@@ -1,6 +1,18 @@
 <div>
-  <app-feature-box [type]="{title:'sport', imageURL: 'https://www.google.com'}"></app-feature-box>
-  home works!
-  {{ type }}
-  
+  <div class="separator">
+    <app-feature-box [type]="{title:'sports', imageUrl: 'https://www.google.com'}" class="featureBox"></app-feature-box>
+    <app-feature-box [type]="{title:'dining', imageUrl: 'https://www.yelp.com'}" class="featureBox"></app-feature-box>
+    <app-feature-box [type]="{title:'company', imageUrl: 'https://www.inviteManager.com'}" class="featureBox"></app-feature-box>
+  </div>
+  <div>
+    <div *ngFor="let event of eventTypes" class="separator">
+      <app-event-type [eventType]="event"></app-event-type>
+    </div>
+  </div>
+  <div class="separator">
+    <app-feature-box [type]="{title:'theater', imageUrl: 'https://www.google.com'}" class="featureBox"></app-feature-box>
+    <app-feature-box [type]="{title:'packages', imageUrl: 'https://www.yelp.com'}" class="featureBox"></app-feature-box>
+    <app-feature-box [type]="{title:'concerts', imageUrl: 'https://www.inviteManager.com'}" class="featureBox"></app-feature-box>
+  </div>
+
 </div>
