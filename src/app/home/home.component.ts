@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { FeatureBoxComponent } from './../feature-box/feature-box.component';
-import { Type } from './../feature-box/type.model';
-import { EventType } from './../event-type/event-type.model'
+import { FeatureBoxComponent } from './feature-box/feature-box.component';
+import { Type } from './feature-box/type.model';
+import { EventType } from './event-type/event-type.model'
 
 @Component({
   selector: 'app-home',

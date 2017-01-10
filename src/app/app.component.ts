@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './navigation/header/header.component';
 import { FooterComponent } from './navigation/footer/footer.component';
-import { FeatureBoxComponent } from './feature-box/feature-box.component';
+import { FeatureBoxComponent } from './home/feature-box/feature-box.component';
 // import { Type } from './feature-box/type.model';
 
 @Component({

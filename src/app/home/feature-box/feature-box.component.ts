@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Type } from './../feature-box/type.model';
+import { Type } from './type.model';
 
 @Component({
   selector: 'app-feature-box',
