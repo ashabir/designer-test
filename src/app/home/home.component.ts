@@ -11,11 +11,12 @@ import { EventType } from './event-type/event-type.model'
 })
 export class HomeComponent implements OnInit {
   @Input() type: Type;
+  @Input() eventType: EventType;
   // eventTypes: EventType[];
   eventTypes: string[];
 
   
-  constructor( ) {
+  constructor(eventType: EventType ) {
     this.eventTypes = ['sports', 'company', 'dining', 'concerts', 'packages', 'theater'];
    }
 

@@ -5,19 +5,16 @@ import { HomeComponent } from './home.component';
 import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
 import { DetailComponent } from './detail/detail.component';
-import { HomeRoutingModule, homeRoutingComponents } from './home.routing';
 
 @NgModule({
   imports: [
-    CommonModule,
-    HomeRoutingModule
+    CommonModule
   ],
   declarations: [
     HomeComponent,
     FeatureBoxComponent,
     EventTypeComponent,
-    DetailComponent,
-    homeRoutingComponents
+    DetailComponent
   ],
   exports: [
     CommonModule,

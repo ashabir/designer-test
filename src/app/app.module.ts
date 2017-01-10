@@ -27,9 +27,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NavigationModule,
-    AuthModule,
-    HomeModule
+    NavigationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
