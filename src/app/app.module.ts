@@ -6,10 +6,11 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { AppRoutingModule, routingComponents } from './app.routing';
+import { AuthModule } from './auth/auth.module';
+import { NavigationModule } from './navigation/navigation.module';
+
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { AuthComponent } from './auth/auth.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { FilterListComponent } from './filter-list/filter-list.component';
@@ -17,19 +18,13 @@ import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
 import { SearchComponent } from './search/search.component';
 
-const appRoutes: Routes = [
-  { path: '', component: AuthComponent, data: { title: 'InviteManager: Login' } },
-  { path: 'home', component: HomeComponent, data: { title: 'InviteManager: Home' } },
-  { path: 'search', component: SearchComponent, data: { title: 'InviteManager: Search Results' } }
-]
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    AuthComponent,
+    routingComponents,
+
     MainComponent,
     HomeComponent,
     FilterListComponent,
@@ -41,7 +36,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    AppRoutingModule,
+    NavigationModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
