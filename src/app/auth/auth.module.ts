@@ -26,8 +26,7 @@ import { AuthRoutingModule, authRoutingComponents } from './auth.routing';
       FormsModule,
       AuthComponent
   ],
-  providers: [],
-  bootstrap: []
+  providers: []
 })
 
 export class AuthModule { } 
