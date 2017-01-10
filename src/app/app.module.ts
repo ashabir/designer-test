@@ -6,6 +6,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { EventTypeComponent } from './home/event-type/event-type.component';
+
 import { AppRoutingModule, routingComponents } from './app.routing';
 import { AuthModule } from './auth/auth.module';
 import { NavigationModule } from './navigation/navigation.module';
@@ -21,6 +23,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     AppComponent,
     routingComponents,
     PageNotFoundComponent,
+    EventTypeComponent
   ],
   imports: [
     BrowserModule,
