@@ -15,7 +15,7 @@ import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
 import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
-import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 
 
@@ -28,15 +28,16 @@ import { SearchComponent } from './search/search.component';
     HomeComponent,
     FeatureBoxComponent,
     EventTypeComponent,
-    SearchComponent
+    PageNotFoundComponent,
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    NavigationModule
-    
+    NavigationModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
