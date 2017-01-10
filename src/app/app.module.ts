@@ -13,7 +13,6 @@ import { NavigationModule } from './navigation/navigation.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HomeComponent } from './home/home.component';
-import { FilterListComponent } from './filter-list/filter-list.component';
 import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
 import { SearchComponent } from './search/search.component';
@@ -27,7 +26,6 @@ import { SearchComponent } from './search/search.component';
 
     MainComponent,
     HomeComponent,
-    FilterListComponent,
     FeatureBoxComponent,
     EventTypeComponent,
     SearchComponent

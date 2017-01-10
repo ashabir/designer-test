@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule, routingComponents } from './../app.routing';
 
+import { FilterListComponent } from './filter-list/filter-list.component';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -17,7 +19,7 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    routingComponents
+    FilterListComponent
   ],
   exports: [
     HeaderComponent,
