@@ -7,6 +7,7 @@ export class AuthService {
 
   login(user: string, password: string): boolean {
     if(user === 'user' && password === 'password') {
+      console.log('From clicked');
       localStorage.setItem('username', user);
       return true;
     }
@@ -23,8 +24,8 @@ export class AuthService {
 
   isLoggedIn(): boolean {
     console.log('AUTH', this.getUser());
-    // return this.gisLoggedInetUser() !== null;
-    return false;
+    // return this.getUser() !== null;
+    return true;
   }
 
   redirectUrl: string;
