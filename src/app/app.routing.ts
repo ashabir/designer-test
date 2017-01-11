@@ -18,16 +18,25 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, data: { title: 'InviteManager: Login' } },
     { path: 'reset', component: ResetComponent, data: { title: 'InviteManager: Reset' } },
     { path: 'forgotPassword', redirectTo: 'reset', pathMatch: 'full' },
-
     { path: 'home', 
         component: HomeComponent, 
         canActivate: [LoggedInGuard], 
         data: { title: 'InviteManager: Home' } 
     },
-
-    { path: 'detail', component: DetailComponent, data: { title: 'InviteManager: Details' } },
-    { path: 'search', component: SearchComponent, data: { title: 'InviteManager: Search Results' } },
-    { path: '**', component: PageNotFoundComponent },
+    { path: 'detail', 
+        component: DetailComponent, 
+        canActivate: [LoggedInGuard],
+        data: { title: 'InviteManager: Details' } 
+    },
+    { path: 'search', 
+        component: SearchComponent, 
+        canActivate: [LoggedInGuard],
+        data: { title: 'InviteManager: Search Results' } 
+    },
+    { path: '**', 
+        component: PageNotFoundComponent,
+        canActivate: [LoggedInGuard] 
+    },
 ];
 
 @NgModule({

@@ -22,9 +22,8 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    console.log('AUTH', this.getUser());
-    // return this.gisLoggedInetUser() !== null;
-    return false;
+    // return this.getUser() !== null;
+    return true;
   }
 
   redirectUrl: string;
