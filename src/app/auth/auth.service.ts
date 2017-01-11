@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    console.log('AUTH', this.getUser());
+
     // return this.getUser() !== null;
     return true;
   }

@@ -21,7 +21,6 @@ export class LoggedInGuard implements CanActivate {
 
     checkLogin(url: string): boolean {
         if(this.authService.isLoggedIn()){ 
-            console.log('check');
             return true; 
         }
         this.authService.redirectUrl = url;
