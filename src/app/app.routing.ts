@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     { path: 'forgotPassword', redirectTo: 'reset', pathMatch: 'full' },
     { path: 'search', component: SearchComponent, data: { title: 'InviteManager: Search Results' } },
     { path: '**', component: PageNotFoundComponent },
-]
+];
 
 @NgModule({
     imports: [
