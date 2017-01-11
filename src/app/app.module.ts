@@ -18,7 +18,6 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
 
   clicked() {
     // console.log(this.username + " " + this.password);
-    (this.authService.login(this.username, this.password)) ? this.route.navigate(['home']) : '';
+    (this.authService.login(this.username, this.password)) ? this.route.navigate(['home']) : alert('Cannot authenticate you!');
   }
 
 }

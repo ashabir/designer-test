@@ -1,7 +1,8 @@
 <p>
   login works!
 </p>
-
-<input type="text" [(ngModel)]="username"/><br/>
-<input type="password" [(ngModel)]="password"/><br/>
-<button (click)="clicked()" (keyup)="clicked($event)" >Login</button>
+<form>
+  <input type="text" name="username" [(ngModel)]="username" /><br/>
+  <input type="password" name="password" [(ngModel)]="password" /><br/>
+  <button id="btn" (click)="clicked()">Login</button>
+</form>
