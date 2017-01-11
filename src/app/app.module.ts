@@ -6,8 +6,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Router, Routes } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-
-
 import { EventTypeComponent } from './home/event-type/event-type.component';
 import { FeatureBoxComponent } from './home/feature-box/feature-box.component';
 
