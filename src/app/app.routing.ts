@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
+import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+
+import { AuthService } from './auth/auth.service';
+import { LoggedInGuard } from './guards/loggedIn.guard.service';
 
 import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './home/detail/detail.component';
@@ -10,12 +14,18 @@ import { ResetComponent } from './auth/reset/reset.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
-    { path: 'home', component: HomeComponent, data: { title: 'InviteManager: Home' } },
-    { path: 'detail', component: DetailComponent, data: { title: 'InviteManager: Details' } },
     { path: '', component: RegisterComponent, data: { title: 'InviteManager: Register' } },
     { path: 'login', component: LoginComponent, data: { title: 'InviteManager: Login' } },
     { path: 'reset', component: ResetComponent, data: { title: 'InviteManager: Reset' } },
     { path: 'forgotPassword', redirectTo: 'reset', pathMatch: 'full' },
+
+    { path: 'home', 
+        component: HomeComponent, 
+        canActivate: [LoggedInGuard], 
+        data: { title: 'InviteManager: Home' } 
+    },
+
+    { path: 'detail', component: DetailComponent, data: { title: 'InviteManager: Details' } },
     { path: 'search', component: SearchComponent, data: { title: 'InviteManager: Search Results' } },
     { path: '**', component: PageNotFoundComponent },
 ];
@@ -26,6 +36,11 @@ const appRoutes: Routes = [
     ],
     exports: [
         RouterModule
+    ],
+    providers: [
+        LoggedInGuard,
+        AuthService,
+        { provide: LocationStrategy, useClass: HashLocationStrategy }
     ]
 })
 
