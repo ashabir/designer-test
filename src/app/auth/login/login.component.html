@@ -4,4 +4,4 @@
 
 <input type="text" [(ngModel)]="username"/><br/>
 <input type="password" [(ngModel)]="password"/><br/>
-<button (click)="clicked()">Login</button>
+<button (click)="clicked()" (keyup)="clicked($event)" >Login</button>
