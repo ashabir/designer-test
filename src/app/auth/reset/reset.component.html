@@ -1,3 +1,7 @@
-<p>
-  reset works!
-</p>
+<div>
+  <h3>I forgot my password</h3>
+  <form name="forgotPassword">
+    <input type="text" [(ngModel)]="email" name="email" placeholder="Email Address" />
+    <button name="resetPassword" id="resetPassword" (click)="reset()">Send Reset Instructions</button>
+  </form>
+</div>

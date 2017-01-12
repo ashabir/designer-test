@@ -1,3 +1,11 @@
-<p>
-  register works!
-</p>
+<div>
+  <h3>Register for an account</h3>
+  <div>
+    <strong>Note:</strong> A company code is required to sign up for InviteManager. Please contact your company InviteManager admin to get your company code.
+  </div>
+  <form name="register">
+    <input type="text" [(ngModel)]="companyCode" name="companyCode" placeholder="Company Code" /> <br/>
+    <input type="text" [(ngModel)]="email" name="email" placeholder="email" /><br/>
+    <button (click)="register()">Register</button>
+  </form>
+</div>
