@@ -9,6 +9,7 @@ import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
 import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
+import { SearchModule } from './search/search.module';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     AppRoutingModule,
     NavigationModule,
     HomeModule,
-    AuthModule
+    AuthModule,
+    SearchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
