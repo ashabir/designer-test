@@ -13,15 +13,11 @@ import { RegisterComponent } from './register/register.component';
       FormsModule,
   ],
   declarations: [
-      AuthComponent,
-      LoginComponent,
-      ResetComponent,
-      RegisterComponent,
+      AuthComponent
   ],
   exports: [
       CommonModule, 
-      FormsModule,
-      AuthComponent
+      FormsModule
   ],
   providers: []
 })

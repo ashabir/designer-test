@@ -3,9 +3,11 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { AppRoutingModule, routingComponents } from './app.routing';
 import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
+import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
@@ -20,7 +22,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     HttpModule,
     AppRoutingModule,
     NavigationModule,
-    HomeModule
+    HomeModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
