@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeComponent } from './home.component';
+import { FilterListComponent } from './filter-list/filter-list.component';
 import { FeatureBoxComponent } from './feature-box/feature-box.component';
 import { EventTypeComponent } from './event-type/event-type.component';
-import { DetailComponent } from './detail/detail.component';
 
 import { EventType } from './event-type/event-type.model';
 
@@ -13,15 +12,15 @@ import { EventType } from './event-type/event-type.model';
     CommonModule
   ],
   declarations: [
-    HomeComponent,
+    FilterListComponent,
     FeatureBoxComponent,
     EventTypeComponent,
-    DetailComponent
   ],
   exports: [
-    CommonModule,
-    HomeComponent
+    FilterListComponent,
+    FeatureBoxComponent,
+    EventTypeComponent,
   ],
-  providers: [EventType]
+  providers: []
 })
 export class HomeModule { }
