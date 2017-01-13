@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AuthService {
+  redirectUrl: string;
 
   constructor() { }
 
@@ -26,5 +27,4 @@ export class AuthService {
     return this.getUser() !== null;
   }
 
-  redirectUrl: string;
 }
