@@ -4,6 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+// importing bootstrap 4 from https://ng-bootstrap.github.io/#/home
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { AppRoutingModule, routingComponents } from './app.routing';
 import { NavigationModule } from './navigation/navigation.module';
 import { HomeModule } from './home/home.module';
@@ -22,10 +25,11 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     NavigationModule,
     HomeModule,
     AuthModule,
-    SearchModule
+    SearchModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
