@@ -14,13 +14,13 @@ export class HomeComponent implements OnInit {
   // eventTypes: EventType[];
   eventTypes: string[];
 
-  
+
   constructor() {
     this.eventTypes = ['sports', 'company', 'dining', 'concerts', 'packages', 'theater'];
-   }
+  }
 
   ngOnInit() {
-    
+
   }
 
 }

@@ -13,7 +13,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { ResetComponent } from './auth/reset/reset.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
     { path: '', component: RegisterComponent, data: { title: 'InviteManager: Register' } },
     { path: 'login', component: LoginComponent, data: { title: 'InviteManager: Login' } },
     { path: 'reset', component: ResetComponent, data: { title: 'InviteManager: Reset' } },

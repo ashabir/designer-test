@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
+import { Title } from '@angular/platform-browser';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     AuthModule,
     SearchModule,
   ],
-  providers: [],
+  providers: [
+    Title
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
