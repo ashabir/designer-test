@@ -21,27 +21,26 @@ export class LoginComponent implements OnInit {
   @Input() password: string;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title
-    ) {
+  ) {
     this.authService = authService;
     this.router = router;
   }
 
   ngOnInit() {
-        this.router.events
+    this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
         while (route.firstChild) route = route.firstChild;
-        console.log('ROUTE', route);
-        
+        console.log("ROUTE!!!!: ", route);
         return route;
       })
       .filter(route => route.outlet === 'primary')
-      .mergeMap(route => route.data)
+      .mergeMap(route => route.data) // Converts route.data to an Observable!!
       .subscribe((event) => this.titleService.setTitle(event['title']));
   }
 
