@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
     ) {   }
 
   ngOnInit() {
-    
+
   }
 
   logout(): void {
@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
   }
 
   search(): void {
-
+    console.log('search', this.searchTerm);
   }
 
   isLogin(): boolean {
