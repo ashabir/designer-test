@@ -24,6 +24,8 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
+    console.log('isLoggedIn', this.getUser() !== null);
+    
     return this.getUser() !== null;
   }
 

@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 
 import { Type } from './feature-box/type.model';
 import { EventType } from './event-type/event-type.model'
+import { AuthService } from './../auth/auth.service';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -22,7 +23,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
   ) {
     this.eventTypes = ['sports', 'company', 'dining', 'concerts', 'packages', 'theater'];
   }

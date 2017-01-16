@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 
 import { AuthService } from './../../auth/auth.service';
@@ -11,20 +11,34 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  authservice: AuthService;
-  router: Router;
+  @Input() searchTerm: string;
 
-  constructor(authservice: AuthService, router: Router) {
-    this.authservice = authservice;
-    this.router = router;
-   }
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+    ) {   }
 
   ngOnInit() {
+    
   }
 
   logout(): void {
-    this.authservice.logout();
+    this.authService.logout();
     this.router.navigate(['login']);
   }
 
+  isLoggedIn(): boolean {      
+    return this.authService.isLoggedIn();
+  }
+
+  search(): void {
+
+  }
+
+  isLogin(): boolean {
+    if(this.router.url === '/login') {
+      return true;
+    }
+    return false;
+  }
 }

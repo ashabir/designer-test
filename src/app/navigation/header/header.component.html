@@ -1,6 +1,18 @@
-<div>
+<div id="header">
   header works!
-  <br/>
-  <a (click)="logout()">Logout</a>
-  <a [routerLink]="['/home']">Home</a>
+  <div id="loggedOutContent" *ngIf="isLoggedIn !== true">
+    <div *ngIf="!isLogin()">
+      Already Registered? <a [routerLink]="['/login']">Login</a> 
+    </div>
+    <div *ngIf="isLogin()">
+      Dont's have an account yet? <a [routerLink]="['/']">Register</a>
+    </div>
+  </div>
+  <div id="loggedInContent" *ngIf="isLoggedIn === true">
+    <a (click)="logout()">Logout</a>
+    <a [routerLink]="['/home']">Home</a>
+    <form name="search">
+      <input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search" class="form-control-lg" />
+    </form>
+  </div>
 </div>
