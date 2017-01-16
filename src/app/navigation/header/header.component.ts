@@ -3,6 +3,8 @@ import { Router, RouterLink } from '@angular/router';
 
 import { AuthService } from './../../auth/auth.service';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

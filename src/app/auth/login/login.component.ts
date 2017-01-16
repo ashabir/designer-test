@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { AuthService } from './../auth.service';
 
+import { Title } from '@angular/platform-browser';
+import { appRoutes } from './../../app.routing';
 
 @Component({
   selector: 'app-login',
@@ -16,13 +18,20 @@ export class LoginComponent implements OnInit {
   @Input() password: string;
   authService: AuthService;
   route: Router;
+  title: Title;
 
-  constructor(authService: AuthService, route: Router) {
+  constructor(authService: AuthService, route: Router, title: Title) {
     this.authService = authService;
     this.route = route;
+    this.title = title;
   }
 
   ngOnInit() {
+    Object.keys(appRoutes[1].data).forEach((key) => {
+      var keyTest = (appRoutes[1].data)[key];
+      // console.log(keyTest);
+      this.title.setTitle(keyTest);
+    });
   }
 
   login() {
