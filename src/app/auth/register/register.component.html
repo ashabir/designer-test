@@ -7,6 +7,11 @@
   <form name="register">
     <input type="text" [(ngModel)]="companyCode" name="companyCode" placeholder="Company Code" /> <br/>
     <input type="text" [(ngModel)]="email" name="email" placeholder="email" /><br/>
-    <button (click)="register()">Register</button>
+    <input type="checkbox" [(ngModel)]="selected" (change)="checkbox(selected)" name="checkBoxRegister"> <label for="checkBoxRegister"> I have read and agrees to the <a routerLink="">Terms of Use</a> </label>
+    <button [disabled]="!selected" (click)="register()">Register</button>
   </form>
+  <div>
+    Already Registered?
+    <a routerLink="login">Login here</a>
+  </div>
 </div>

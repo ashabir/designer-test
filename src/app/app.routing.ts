@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Router, Routes } from '@angular/router';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AuthService } from './auth/auth.service';
 import { LoggedInGuard } from './guards/loggedIn.guard.service';
@@ -18,24 +18,28 @@ export const appRoutes: Routes = [
     { path: 'login', component: LoginComponent, data: { title: 'InviteManager: Login' } },
     { path: 'reset', component: ResetComponent, data: { title: 'InviteManager: Reset' } },
     { path: 'forgotPassword', redirectTo: 'reset', pathMatch: 'full' },
-    { path: 'home', 
-        component: HomeComponent, 
-        canActivate: [LoggedInGuard], 
-        data: { title: 'InviteManager: Home' } 
-    },
-    { path: 'detail', 
-        component: DetailComponent, 
+    {
+        path: 'home',
+        component: HomeComponent,
         canActivate: [LoggedInGuard],
-        data: { title: 'InviteManager: Details' } 
+        data: { title: 'InviteManager: Home' }
     },
-    { path: 'search', 
-        component: SearchComponent, 
+    {
+        path: 'detail',
+        component: DetailComponent,
         canActivate: [LoggedInGuard],
-        data: { title: 'InviteManager: Search Results' } 
+        data: { title: 'InviteManager: Details' }
     },
-    { path: '**', 
+    {
+        path: 'search',
+        component: SearchComponent,
+        canActivate: [LoggedInGuard],
+        data: { title: 'InviteManager: Search Results' }
+    },
+    {
+        path: '**',
         component: PageNotFoundComponent,
-        canActivate: [LoggedInGuard] 
+        canActivate: [LoggedInGuard]
     },
 ];
 
@@ -56,11 +60,11 @@ export const appRoutes: Routes = [
 export class AppRoutingModule { }
 
 export const routingComponents = [
-    HomeComponent, 
-    DetailComponent, 
+    HomeComponent,
+    DetailComponent,
     RegisterComponent,
     LoginComponent,
-    ResetComponent,  
+    ResetComponent,
     SearchComponent,
     PageNotFoundComponent
 ];
