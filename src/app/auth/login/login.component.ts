@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 import { AuthService } from './../auth.service';
-
-import { Title } from '@angular/platform-browser';
 import { appRoutes } from './../../app.routing';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-login',
@@ -16,27 +19,34 @@ export class LoginComponent implements OnInit {
 
   @Input() username: string;
   @Input() password: string;
-  authService: AuthService;
-  route: Router;
-  title: Title;
 
-  constructor(authService: AuthService, route: Router, title: Title) {
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title
+    ) {
     this.authService = authService;
-    this.route = route;
-    this.title = title;
+    this.router = router;
   }
 
   ngOnInit() {
-    Object.keys(appRoutes[1].data).forEach((key) => {
-      var keyTest = (appRoutes[1].data)[key];
-      // console.log(keyTest);
-      this.title.setTitle(keyTest);
-    });
+        this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .map(() => this.activatedRoute)
+      .map(route => {
+        while (route.firstChild) route = route.firstChild;
+        console.log('ROUTE', route);
+        
+        return route;
+      })
+      .filter(route => route.outlet === 'primary')
+      .mergeMap(route => route.data)
+      .subscribe((event) => this.titleService.setTitle(event['title']));
   }
 
   login() {
-    // console.log(this.username + " " + this.password);
-    (this.authService.login(this.username, this.password)) ? this.route.navigate(['home']) : alert('Cannot authenticate you!');
+    (this.authService.login(this.username, this.password)) ? this.router.navigate(['home']) : alert('Cannot authenticate you!');
   }
 
 }

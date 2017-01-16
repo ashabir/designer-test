@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 import { AuthService } from './../auth.service';
-
-import { Title } from '@angular/platform-browser';
 import { appRoutes } from './../../app.routing';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 @Component({
   selector: 'app-reset',
@@ -14,20 +17,25 @@ import { appRoutes } from './../../app.routing';
 })
 export class ResetComponent implements OnInit {
   @Input() email: string;
-  authService: AuthService;
-  title: Title;
 
-  constructor(authService: AuthService, title: Title) {
-    this.authService = authService;
-    this.title = title;
-  }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title
+    ) { }
 
   ngOnInit() {
-    Object.keys(appRoutes[2].data).forEach((key) => {
-      var keyTest = (appRoutes[2].data)[key];
-      // console.log(keyTest);
-      this.title.setTitle(keyTest);
-    });
+      this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .map(() => this.activatedRoute)
+      .map(route => {
+        while (route.firstChild) route = route.firstChild;
+        return route;
+      })
+      .filter(route => route.outlet === 'primary')
+      .mergeMap(route => route.data)
+      .subscribe((event) => this.titleService.setTitle(event['title']));
   }
 
   reset(): void {
