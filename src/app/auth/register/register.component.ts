@@ -18,9 +18,10 @@ import 'rxjs/add/operator/mergeMap';
 export class RegisterComponent implements OnInit {
   @Input() companyCode: string;
   @Input() email: string;
-  
+  @Input() selected: boolean = false;
+
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.router.events
+    this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
@@ -43,7 +44,13 @@ export class RegisterComponent implements OnInit {
 
   register(): void {
     console.log('REGISTER', this.companyCode, this.email);
-
   }
+
+  checkbox(selected): boolean {
+    console.log("SELECTED: ", selected);
+    return (this.selected) ? false : true;
+  }
+
+
 
 }
