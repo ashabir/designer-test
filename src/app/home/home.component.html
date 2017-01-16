@@ -1,18 +1,18 @@
 <div>
   <app-filter-list></app-filter-list>
-  <div class="separator">
+  <div class="clearfix">
     <app-feature-box [type]="{title:'sports', imageUrl: 'https://www.google.com'}" class="featureBox"></app-feature-box>
     <app-feature-box [type]="{title:'dining', imageUrl: 'https://www.yelp.com'}" class="featureBox"></app-feature-box>
     <app-feature-box [type]="{title:'company', imageUrl: 'https://www.inviteManager.com'}" class="featureBox"></app-feature-box>
   </div>
-  <div class="separator">
+  <div class="clearfix">
     <ul class="list-inline">
       <li *ngFor="let event of eventTypes" class="separator list-inline-item">
         <app-event-type [eventType]="event"></app-event-type>
       </li>
     </ul>
   </div>
-  <div class="separator">
+  <div class="clearfix">
     <app-feature-box [type]="{title:'theater', imageUrl: 'https://www.google.com'}" class="featureBox"></app-feature-box>
     <app-feature-box [type]="{title:'packages', imageUrl: 'https://www.yelp.com'}" class="featureBox"></app-feature-box>
     <app-feature-box [type]="{title:'concerts', imageUrl: 'https://www.inviteManager.com'}" class="featureBox"></app-feature-box>
