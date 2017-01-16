@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     Object.keys(appRoutes[0].data).forEach((key) => {
       var keyTest = (appRoutes[0].data)[key];
-      console.log(keyTest);
+      // console.log(keyTest);
       this.title.setTitle(keyTest);
     });
   }
