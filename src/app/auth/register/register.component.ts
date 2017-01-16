@@ -16,7 +16,6 @@ import 'rxjs/add/operator/mergeMap';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
   @Input() companyCode: string;
   @Input() email: string;
   @Input() selected: boolean = false;
@@ -51,5 +50,7 @@ export class RegisterComponent implements OnInit {
     console.log("SELECTED: ", selected);
     return (this.selected) ? false : true;
   }
+
+
 
 }
