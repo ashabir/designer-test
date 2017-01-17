@@ -6,6 +6,7 @@ import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { ResetComponent } from './reset/reset.component';
 import { RegisterComponent } from './register/register.component';
+import { SetPasswordComponent } from './set-password/set-password.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { RegisterComponent } from './register/register.component';
       FormsModule,
   ],
   declarations: [
-      AuthComponent
+      AuthComponent,
+      SetPasswordComponent
   ],
   exports: [
       CommonModule, 
