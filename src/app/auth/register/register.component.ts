@@ -5,9 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { AuthService } from './../auth.service';
 import { appRoutes } from './../../app.routing';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
+
 
 @Component({
   selector: 'app-register',
@@ -25,7 +23,7 @@ export class RegisterComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title
   ) {
-    this.authService = authService;
+    // this.authService = authService;
   }
 
   ngOnInit() {

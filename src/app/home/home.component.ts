@@ -6,10 +6,6 @@ import { Type } from './feature-box/type.model';
 import { EventType } from './event-type/event-type.model'
 import { AuthService } from './../auth/auth.service';
 
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

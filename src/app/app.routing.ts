@@ -11,6 +11,7 @@ import { SearchComponent } from './search/search.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ResetComponent } from './auth/reset/reset.component';
+import { SetPasswordComponent } from './auth/set-password/set-password.component';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
 
 export const appRoutes: Routes = [
@@ -23,6 +24,11 @@ export const appRoutes: Routes = [
         component: HomeComponent,
         canActivate: [LoggedInGuard],
         data: { title: 'InviteManager: Home' }
+    },
+    {
+        path: 'setPassword',
+        component: SetPasswordComponent,
+        data: { title: 'InviteManager: Set Password '}
     },
     {
         path: 'detail',

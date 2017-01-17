@@ -4,8 +4,14 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 // importing bootstrap 4 from https://ng-bootstrap.github.io/#/home
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
 
 import { AppRoutingModule, routingComponents } from './app.routing';
 import { NavigationModule } from './navigation/navigation.module';
@@ -17,6 +23,9 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 
 import { Title } from '@angular/platform-browser';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +33,7 @@ import { Title } from '@angular/platform-browser';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpModule,
     AppRoutingModule,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,7 @@ import { SetPasswordComponent } from './set-password/set-password.component';
   imports: [
       CommonModule, 
       FormsModule,
+      ReactiveFormsModule,
   ],
   declarations: [
       AuthComponent,
