@@ -3,8 +3,8 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { ReactiveFormsModule } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 // importing bootstrap 4 from https://ng-bootstrap.github.io/#/home
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -20,11 +20,6 @@ import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { SearchModule } from './search/search.module';
 import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.component';
-
-import { Title } from '@angular/platform-browser';
-
-
-
 
 @NgModule({
   declarations: [
