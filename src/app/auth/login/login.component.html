@@ -1,5 +1,10 @@
-<form>
-  <input type="text" name="username" [(ngModel)]="username" /><br/>
-  <input type="password" name="password" [(ngModel)]="password" /><br/>
-  <button id="btn" (click)="login()">Login</button>
-</form>
+<div>
+  Login to your account
+</div>
+<div>
+  <form>
+    <input type="text" name="username" [(ngModel)]="username" placeholder="E-mail Address" /><br/>
+    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" /><br/>
+    <button id="btn" (click)="login()">Login</button>
+  </form>
+</div>

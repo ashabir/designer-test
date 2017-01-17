@@ -5,13 +5,14 @@
     admin to get your company code.
   </div>
   <form name="register">
-    <input type="text" [(ngModel)]="companyCode" name="companyCode" placeholder="Company Code" /> <br/>
-    <input type="text" [(ngModel)]="email" name="email" placeholder="email" /><br/>
-    <input type="checkbox" [(ngModel)]="selected" (change)="checkbox(selected)" name="checkBoxRegister"> <label for="checkBoxRegister"> I have read and agrees to the <a routerLink="">Terms of Use</a> </label>
+    <input type="text" [(ngModel)]="companyCode" pattern="[0-9]+" title="Only numbers are valid" name="companyCode" placeholder="Company Code"
+    /> <br/>
+    <input type="text" [(ngModel)]="email" name="email" placeholder="E-mail Address" /><br/>
+    <input type="checkbox" [(ngModel)]="selected" (change)="checkbox(selected)" name="checkBoxRegister"> <label for="checkBoxRegister"> I have read and agrees to the <a [routerLink]="">Terms of Use</a> </label>
     <button [disabled]="isValid()" (click)="register()">Register</button>
   </form>
   <div>
     Already Registered?
-    <a routerLink="login">Login here</a>
+    <a [routerLink]="['/login']">Login here</a>
   </div>
 </div>

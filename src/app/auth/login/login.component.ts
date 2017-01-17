@@ -30,13 +30,15 @@ export class LoginComponent implements OnInit {
     this.router = router;
   }
 
+
+
   ngOnInit() {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
       .map(() => this.activatedRoute)
       .map(route => {
         while (route.firstChild) route = route.firstChild;
-        console.log("ROUTE!!!!: ", route);
+        // console.log("ROUTE!!!!: ", route);
         return route;
       })
       .filter(route => route.outlet === 'primary')

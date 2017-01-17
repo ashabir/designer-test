@@ -5,7 +5,7 @@
       Already Registered? <a [routerLink]="['/login']">Login</a> 
     </div>
     <div *ngIf="isLogin()">
-      Dont's have an account yet? <a [routerLink]="['/']">Register</a>
+      Don't have an account yet? <a [routerLink]="['/']">Register</a>
     </div>
   </div>
   <div id="loggedInContent" *ngIf="isLoggedIn() === true">
