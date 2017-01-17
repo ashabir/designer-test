@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpModule, Http } from '@angular/http';
+
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class AuthService {
   redirectUrl: string;
+  baseUrl: string = environment.baseUrl;
 
-  constructor() { }
+  constructor() { 
+    console.log('URL', this.baseUrl);
+    
+  }
 
   login(user: string, password: string): boolean {
     if(user === 'user' && password === 'password') {
