@@ -48,8 +48,7 @@ export class SetPasswordComponent implements OnInit {
       .mergeMap(route => route.data) // Converts route.data to an Observable!!
       .subscribe((event) => this.titleService.setTitle(event['title']));
 
-      this.callObservable();
-
+    this.callObservable();
   }
 
   callObservable() {
