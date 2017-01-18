@@ -3,6 +3,8 @@ import { HttpModule, Http, Response, Headers, RequestOptions } from '@angular/ht
 
 import { Observable } from 'rxjs';
 
+import 'rxjs/add/operator/catch';
+
 import { environment } from './../../environments/environment';
 
 @Injectable()
@@ -28,19 +30,19 @@ export class AuthService {
       }),
       options
     )
-    .map(response => response.json())
-    .map((response) => {
-      this.token = response.token;
-      console.log('TOKEN', this.token);
-      
-      return this.token;
-    })    
+      .map(response => response.json())
+      .map((response) => {
+        this.token = response.token;
+        console.log('TOKEN', this.token);
+
+        return this.token;
+      })
   }
-  login (loginData: Object, token: string): Observable<string> {
-    let headers = new Headers({'Content-Type': 'application/json'});
+  login(loginData: Object, token: string): Observable<string> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', 'Bearer ' + token);
-    
-    let options = new RequestOptions({headers: headers})
+
+    let options = new RequestOptions({ headers: headers })
     console.log('SERVICE LOGIN', loginData, token);
     return this.http.post(
       this.baseUrl + 'login',
@@ -49,14 +51,15 @@ export class AuthService {
       ),
       options
     )
-    .map(response => response.json())
-    .map((response) => {
-      return response.jwt;
-    })
-    .catch((err, caught) =>{ 
-      console.log('CATCH', err);
-      return err;
-    })
+      .map(response => response.json())
+      .map((response) => {
+        console.log('JWT');
+        return response.jwt;
+      })
+      .catch((err) => {
+        console.log('Error JSON: ', Observable.throw(err.json()));
+        return Observable.throw(err.json());
+      })
   }
 
   logout(): any {
@@ -71,7 +74,7 @@ export class AuthService {
     return this.getUser() !== null;
   }
 
-  handleError(){
+  handleError() {
 
   }
 
