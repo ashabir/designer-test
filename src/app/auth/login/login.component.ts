@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     console.log('LOGIN');
-    
+
     let loginData = {
       email: this.username,
       password: this.password
@@ -55,15 +55,8 @@ export class LoginComponent implements OnInit {
     this.authService.getToken().subscribe(token => {
       this.authService.login(loginData, token).subscribe(res => {
         console.log('RETURN', res);
-      },(err) => {
+      }, (err) => {
         console.log("COMP ERROR", err);
-        this.alert.alerts.push(
-          {
-            id: 1,
-            type: 'success',
-            message: 'This is an success alert',
-          }
-        );
       });
     })
   }
