@@ -51,15 +51,12 @@ export class AuthService {
     )
     .map(response => response.json())
     .map((response) => {
-      console.log('JWT');
       return response.jwt;
     })
-    // .catch((err, caught) =>{ 
-    //   console.log('CATCH', typeof err);
-      
-    //   return err;
-    // })
-
+    .catch((err, caught) =>{ 
+      console.log('CATCH', err);
+      return err;
+    })
   }
 
   logout(): any {
