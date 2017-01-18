@@ -3,8 +3,6 @@ import { HttpModule, Http, Response, Headers, RequestOptions } from '@angular/ht
 
 import { Observable } from 'rxjs';
 
-import 'rxjs/add/operator/catch';
-
 import { environment } from './../../environments/environment';
 
 @Injectable()
