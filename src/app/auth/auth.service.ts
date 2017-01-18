@@ -14,7 +14,7 @@ export class AuthService {
   constructor(private http: Http) {
     console.log('URL', this.baseUrl);
   }
-
+  //returns token needed to login or activate
   getToken(): Observable<string> {
     let headers = new Headers({ 'Content-Type': 'application/json' })
     headers.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25zdW1lcl9pZCI6MSwicm11IjoxLCJpYXQiOjE0Njc4MjU5NTAsImV4cCI6MjMzMTgyNTk1MCwidXNlcl9pZCI6MSwib3JnYW5pemF0aW9uX2lkIjoxLCJyb2xlX2lkIjoxLCJwcm9maWxlX2lkIjoxfQ.R87dXa3b1MZrtxflaNRL2mvYlR3ousEc7e_J3G2b5Tw');
@@ -36,6 +36,7 @@ export class AuthService {
         return this.token;
       })
   }
+  //returns a JWT token
   login(loginData: Object, token: string): Observable<string> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     headers.append('Authorization', 'Bearer ' + token);
