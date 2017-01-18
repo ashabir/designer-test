@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    (this.authService.login(this.username, this.password)) ? this.router.navigate(['home']) : alert('Cannot authenticate you!');
+    (this.authService.login(this.username, this.password)) ? /* this.router.navigate(['home']) */ '' : '' /* alert('Cannot authenticate you!') */;
   }
 
 }
