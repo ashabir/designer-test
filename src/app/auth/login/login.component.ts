@@ -43,7 +43,19 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    (this.authService.login(this.username, this.password)) ? /* this.router.navigate(['home']) */ '' : '' /* alert('Cannot authenticate you!') */;
+    console.log('LOGIN');
+    
+    let loginData = {
+      email: this.username,
+      password: this.password
+    }
+    this.authService.getToken().subscribe(token => {
+      this.authService.login(loginData, token).subscribe(res => {
+        console.log('RETURN', res);
+        
+      });
+    })
+    // (this.authService.login(this.username, this.password)) ? /* this.router.navigate(['home']) */ '' : '' /* alert('Cannot authenticate you!') */;
   }
 
 }

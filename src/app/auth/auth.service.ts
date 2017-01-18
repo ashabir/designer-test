@@ -30,30 +30,35 @@ export class AuthService {
     .map(response => response.json())
     .map((response) => {
       this.token = response.token;
-      return this.token;
-    })
-    // .subscribe((response) => {
-    //   console.log('response', response.token)
-    //   // this.token = response.token;
-    //   sessionStorage.setItem('auth_token', response.token);
-    // })
-    
-  }
-  login(user: string, password: string): void {
-    
-    this.getToken().subscribe((result) => {
-      console.log('Here!', result);
-    });
+      console.log('TOKEN', this.token);
       
+      return this.token;
+    })    
+  }
+  login (loginData: Object, token: string): Observable<string> {
+    let headers = new Headers({'Content-Type': 'application/json'});
+    headers.append('Authorization', 'Bearer ' + token);
     
-    console.log('TOKEN', this.token);
+    let options = new RequestOptions({headers: headers})
+    console.log('SERVICE LOGIN', loginData, token);
+    return this.http.post(
+      this.baseUrl + 'login',
+      JSON.stringify(
+        loginData
+      ),
+      options
+    )
+    .map(response => response.json())
+    .map((response) => {
+      console.log('JWT');
+      return response.jwt;
+    })
+    // .catch((err, caught) =>{ 
+    //   console.log('CATCH', typeof err);
+      
+    //   return err;
+    // })
 
-  //   if(user === 'user' && password === 'password') {
-  //     console.log('From clicked');
-  //     localStorage.setItem('username', user);
-  //     return true;
-  //   }
-  //   return false;
   }
 
   logout(): any {
@@ -66,6 +71,10 @@ export class AuthService {
 
   isLoggedIn(): boolean {    
     return this.getUser() !== null;
+  }
+
+  handleError(){
+
   }
 
 }
