@@ -8,6 +8,7 @@ import { Title } from '@angular/platform-browser';
 
 // importing bootstrap 4 from https://ng-bootstrap.github.io/#/home
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdAlertCloseable } from './shared/alerts/alerts.component';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -25,7 +26,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
 @NgModule({
   declarations: [
     AppComponent,
-    routingComponents
+    routingComponents,
+    NgbdAlertCloseable
   ],
   imports: [
     BrowserModule,

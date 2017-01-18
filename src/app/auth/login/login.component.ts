@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
     this.router = router;
   }
 
-
-
   ngOnInit() {
     this.router.events
       .filter(event => event instanceof NavigationEnd)
