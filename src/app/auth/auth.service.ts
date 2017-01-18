@@ -52,11 +52,13 @@ export class AuthService {
     )
       .map(response => response.json())
       .map((response) => {
-        console.log('JWT');
+        console.log('JWT', typeof response.jwt);
         return response.jwt;
       })
       .catch((err) => {
-        console.log('Error JSON: ', Observable.throw(err.json()));
+        var errorObject = err.json();
+        var errorName = errorObject.code_name;
+        console.log('ERROR NAME: ', errorName);
         return Observable.throw(err.json());
       })
   }
