@@ -42,7 +42,8 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     SearchModule,
   ],
   providers: [
-    Title
+    Title,
+    NgbdAlertCloseable
   ],
   bootstrap: [AppComponent]
 })

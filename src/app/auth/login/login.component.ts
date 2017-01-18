@@ -3,6 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Title } from '@angular/platform-browser';
 
+import { NgbAlert, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbdAlertCloseable } from './../../shared/alerts/alerts.component';
+
 import { AuthService } from './../auth.service';
 import { appRoutes } from './../../app.routing';
 
@@ -20,10 +23,12 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    public alert: NgbdAlertCloseable
   ) {
     this.authService = authService;
     this.router = router;
+    this.alert = alert;
   }
 
   ngOnInit() {
@@ -50,10 +55,17 @@ export class LoginComponent implements OnInit {
     this.authService.getToken().subscribe(token => {
       this.authService.login(loginData, token).subscribe(res => {
         console.log('RETURN', res);
-        
+      },(err) => {
+        console.log("COMP ERROR", err);
+        this.alert.alerts.push(
+          {
+            id: 1,
+            type: 'success',
+            message: 'This is an success alert',
+          }
+        );
       });
     })
-    // (this.authService.login(this.username, this.password)) ? /* this.router.navigate(['home']) */ '' : '' /* alert('Cannot authenticate you!') */;
   }
 
 }
