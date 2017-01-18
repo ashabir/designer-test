@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpModule, Http, Response, Headers, RequestOptions } from '@angular/http';
 
+import { Observable } from 'rxjs';
+
 import { environment } from './../../environments/environment';
 
 @Injectable()
@@ -12,12 +14,12 @@ export class AuthService {
   constructor(private http: Http) { 
     console.log('URL', this.baseUrl);
   }
-  getToken(): void {
+  getToken(): Observable<string> {
     let headers = new Headers({'Content-Type': 'application/json'})
     headers.append('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjb25zdW1lcl9pZCI6MSwicm11IjoxLCJpYXQiOjE0Njc4MjU5NTAsImV4cCI6MjMzMTgyNTk1MCwidXNlcl9pZCI6MSwib3JnYW5pemF0aW9uX2lkIjoxLCJyb2xlX2lkIjoxLCJwcm9maWxlX2lkIjoxfQ.R87dXa3b1MZrtxflaNRL2mvYlR3ousEc7e_J3G2b5Tw'); 
     
     let options = new RequestOptions({headers: headers})
-    this.http.post(
+    return this.http.post(
       this.baseUrl + 'token',
       JSON.stringify({
         access_id: 'hf463gu8736gfgyr63',
@@ -26,15 +28,24 @@ export class AuthService {
       options
     )
     .map(response => response.json())
-    .subscribe((response) => {
-      console.log('response', response.token)
+    .map((response) => {
       this.token = response.token;
+      return this.token;
     })
+    // .subscribe((response) => {
+    //   console.log('response', response.token)
+    //   // this.token = response.token;
+    //   sessionStorage.setItem('auth_token', response.token);
+    // })
     
   }
   login(user: string, password: string): void {
-    this.getToken()
-
+    
+    this.getToken().subscribe((result) => {
+      console.log('Here!', result);
+    });
+      
+    
     console.log('TOKEN', this.token);
 
   //   if(user === 'user' && password === 'password') {
