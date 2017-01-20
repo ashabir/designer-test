@@ -1,5 +1,5 @@
 <!--<ngbd-alert-closeable></ngbd-alert-closeable>-->
-<ngb-alert *ngIf="message" type="danger" [dismissible]="false">{{message}}</ngb-alert>
+<ngb-alert *ngIf="message" type="danger" [dismissible]="true" (close)="closeAlert()">{{message}}</ngb-alert>
 <div>
   Login to your account!!
 </div>

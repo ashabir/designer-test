@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo '--------------------'
+echo 'STARTING SCRIPT'
+
+outputOfPush=`git push`
+
+echo $outputOfPush
+
+if [[ $outputOfPush != "Everything up-to-date" ]]; then
+    echo "Not ready for build/deploy, exiting"
+    exit 1
+fi
+
+echo `ng build`
+echo `s3-deploy './dist/**' --cwd './dist/' --region us-east-1 --bucket test-bucket-build-script`
+
+echo 'SCRIPT DONE'
+echo '--------------------'

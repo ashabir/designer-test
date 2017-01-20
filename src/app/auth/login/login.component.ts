@@ -58,10 +58,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       }, (err) => {
         console.log("COMP ERROR", err);
-        if(err.code_name === 'LOGIN_FAIL'){
+        if (err.code_name === 'LOGIN_FAIL') {
           this.message = 'Your email or password were incorrect';
         }
-        else if(err.code_name) {
+        else if (err.code_name) {
           this.message = err.code_name;
         }
         else {
@@ -70,6 +70,12 @@ export class LoginComponent implements OnInit {
         // this.alert.warningAlert('FAILED LOGIN', );
       });
     })
+  }
+
+
+  closeAlert() {
+    console.log('Test closing');
+    this.message = null;
   }
 
 }
