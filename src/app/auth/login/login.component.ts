@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
 
   closeAlert() {
     console.log('Test closing');
-    this.message = null;
+    this.message = '';
   }
 
 }

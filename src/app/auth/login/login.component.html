@@ -1,12 +1,12 @@
 <!--<ngbd-alert-closeable></ngbd-alert-closeable>-->
 <ngb-alert *ngIf="message" type="danger" [dismissible]="true" (close)="closeAlert()">{{message}}</ngb-alert>
 <div>
-  Login to your account!!
+  Login to your account
 </div>
 <div>
   <form>
-    <input type="text" name="username" [(ngModel)]="username" placeholder="E-mail Address" /><br/>
-    <input type="password" name="password" [(ngModel)]="password" placeholder="Password" /><br/>
-    <button id="btn" (click)="login()">Login</button>
+    <input type="text" name="username" [(ngModel)]="username" placeholder="E-mail Address" class="form-control-sm" /><br/>
+    <input type="password" name="password " [(ngModel)]="password " placeholder="Password " class="form-control-sm" /><br/>
+    <button id="btn" class="btn btn-success" (click)="login()">Login</button>
   </form>
 </div>

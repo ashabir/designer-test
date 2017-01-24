@@ -14,9 +14,9 @@ export class HeaderComponent implements OnInit {
   @Input() searchTerm: string;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthService,
     private router: Router
-    ) {   }
+  ) { }
 
   ngOnInit() {
 
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
-  isLoggedIn(): boolean {      
+  isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
   }
 
@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isLogin(): boolean {
-    if(this.router.url === '/login') {
+    if (this.router.url === '/login') {
       return true;
     }
     return false;

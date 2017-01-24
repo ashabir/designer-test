@@ -58,8 +58,8 @@ export const appRoutes: Routes = [
     ],
     providers: [
         LoggedInGuard,
-        AuthService,
-        { provide: LocationStrategy, useClass: HashLocationStrategy }
+        AuthService
+        // { provide: LocationStrategy, useClass: HashLocationStrategy }
     ]
 })
 

@@ -6,10 +6,10 @@
   </div>
   <form name="register">
     <input type="text" [(ngModel)]="companyCode" pattern="[a-zA-Z0-9]*" title="Please enter any combination of alphanumeric characters"
-      name="companyCode" placeholder="Company Code" /> <br/>
-    <input type="text" [(ngModel)]="email" name="email" placeholder="E-mail Address" /><br/>
+      name="companyCode" placeholder="Company Code" class="form-control-sm" /> <br/>
+    <input type="text" [(ngModel)]="email" name="email" placeholder="E-mail Address" class="form-control-sm" /><br/>
     <input type="checkbox" [(ngModel)]="selected" (change)="checkbox(selected)" name="checkBoxRegister"> <label for="checkBoxRegister"> I have read and agrees to the <a [routerLink]="">Terms of Use</a> </label>
-    <button [disabled]="isValid()" (click)="register()">Register</button>
+    <button [disabled]="isValid()" (click)="register()" class="btn btn-success" >Register</button>
   </form>
   <div>
     Already Registered?
