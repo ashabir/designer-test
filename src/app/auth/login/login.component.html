@@ -3,16 +3,9 @@
   Login to your account
 </div>
 <div>
-<<<<<<< HEAD
-  <form>
-    <input type="text" name="username" [(ngModel)]="username" placeholder="E-mail Address" class="form-control-sm" /><br/>
-    <input type="password" name="password " [(ngModel)]="password " placeholder="Password " class="form-control-sm" /><br/>
-    <button id="btn" class="btn btn-success" (click)="login()">Login</button>
-=======
   <form name="loginForm">
     <input id="username" type="text" name="username" [(ngModel)]="username" placeholder="E-mail Address" /><br/>
     <input id="password" type="password" name="password" [(ngModel)]="password" placeholder="Password" /><br/>
     <button id="login" (click)="login()" [attr.aria-label]="'Login'">Login</button>
->>>>>>> 4c2c3cc4c185fe4dd22e7be821c59d47db1acdee
   </form>
 </div>
