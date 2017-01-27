@@ -9,6 +9,7 @@ import { Title } from '@angular/platform-browser';
 // importing bootstrap 4 from https://ng-bootstrap.github.io/#/home
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbdAlertCloseable } from './shared/alerts/alerts.component';
+import { Angulartics2Module, Angulartics2Segment } from 'angulartics2';
 
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
@@ -40,6 +41,7 @@ import { PageNotFoundComponent } from './shared/page-not-found/page-not-found.co
     HomeModule,
     AuthModule,
     SearchModule,
+    Angulartics2Module.forRoot([ Angulartics2Segment ])
   ],
   providers: [
     Title,
