@@ -1,7 +1,29 @@
-<div>
+<div class="reset-page">
+  <div class="form">
+    <form class="reset-form" name="forgotPassword">
+      <div class="input-group title">
+      I forgot my password
+      </div>
+      <div class="input-group has-error">
+        <input id="email" type="text" name="email" [(ngModel)]="email" placeholder="E-mail Address"/>
+        <span class="help-block">Please enter a valid email address.</span>
+      </div>
+      <div class="form-button">
+        <button id="resetPassword" name="resetPassword" (click)="reset()">Send Reset Instructions</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
+<!--<div>
   <h3>I forgot my password</h3>
   <form name="forgotPassword">
     <input type="text" [(ngModel)]="email" name="email" placeholder="Email Address" />
     <button name="resetPassword" id="resetPassword" (click)="reset()">Send Reset Instructions</button>
   </form>
-</div>
+</div>-->

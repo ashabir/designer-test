@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit {
   }
 
   isLoggedIn(): boolean {
-    return this.authService.isLoggedIn();
+    return true; //this.authService.isLoggedIn();
   }
 
   search(): void {

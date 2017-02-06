@@ -1,6 +1,38 @@
 <header id="header">
-  header works!
-  <div id="loggedOutContent" *ngIf="isLoggedIn() !== true">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid col-lg-12">
+    <div class="navbar-header"> <a class="navbar-brand" [routerLink]="['/home']"> <img alt="InviteManager" src="assets/images/inviteManager-logo.png"> </a>
+      <ul class="nav navbar-nav pull-right" *ngIf="isLoggedIn() !== true">
+        <li class="navbar-text navbar-right" *ngIf="!isLogin()">Already Registered? <a [routerLink]="['/login']" class="navbar-link">Login</a></li>
+        <li class="navbar-text navbar-right" *ngIf="isLogin()">Don't have an account yet? <a [routerLink]="['/']" class="navbar-link">Register</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right" *ngIf="isLoggedIn() === true">
+        <li class="navbar-text link"><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+        <li class="navbar-text link">Welcome, Ken.</li>
+        <li class="navbar-text link userImg"><div class="circle-avatar" style="background-image:url('http://endlesstheme.com/simplify1.0/images/profile/profile4.jpg')"></div></li>
+        <li class="navbar-text link"><a (click)="logout()"> Logout</a></li>
+        <li class="navbar-text link"><a [routerLink]="['/home']"> Home</a></li>
+      </ul>
+      <div class="clearfix"></div>
+      <div class="row">
+        <div class="col-md-5 center-block">
+          <form name="search" (ngSubmit)="search(search.value)">
+            <div class="input-group stylish-input-group">
+                    <input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search for events, venues, teams, etc" class="form-control-lg col-lg-11" />
+                    <span class="input-group-addon">
+                        <button type="submit">
+                            <i class="fa fa-play-circle" aria-hidden="true"></i>
+                        </button>  
+                    </span>
+                </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!--<div id="loggedOutContent" *ngIf="isLoggedIn() !== true">
     <div *ngIf="!isLogin()">
       Already Registered? <a [routerLink]="['/login']">Login</a>
     </div>
@@ -14,5 +46,36 @@
     <form name="search" (ngSubmit)="search(search.value)">
       <input type="text" name="search" [(ngModel)]="searchTerm" placeholder="Search" class="form-control-lg" />
     </form>
-  </div>
-</header>
+  </div>-->
+</header> 
+<nav class="filterbar">
+   <ul>
+     <li class="sub-menu-parent">
+       <a href="#"><i class="fa fa-ticket" aria-hidden="true"></i> 4 Tickets <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+       <ul class="sub-menu">
+         <li><a href="#">Sub Item 1</a></li>
+         <li><a href="#">Sub Item 2</a></li>
+         <li><a href="#">Sub Item 3</a></li>
+         <li><a href="#">Sub Item 4</a></li>
+       </ul>
+     </li>
+     <li class="sub-menu-parent"><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Los Angeles, CA <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+       <ul class="sub-menu">
+         <li><a href="#">Sub Item 1</a></li>
+         <li><a href="#">Sub Item 2</a></li>
+         <li><a href="#">Sub Item 3</a></li>
+         <li><a href="#">Sub Item 4</a></li>
+         <li><a href="#">Sub Item 5</a></li>
+         <li><a href="#">Sub Item 6</a></li>
+       </ul>
+     </li>
+     <li class="sub-menu-parent"><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> Today, Sept 19th <i class="fa fa-caret-down" aria-hidden="true"></i>
+</a>
+       <ul class="sub-menu">
+         <li><a href="#">Sub Item 1</a></li>
+         <li><a href="#">Sub Item 2</a></li>
+       </ul></li>
+   </ul>
+ </nav>

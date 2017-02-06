@@ -1,0 +1,171 @@
+.navbar {
+	background: #1c515a;
+	padding: 0px;
+}
+.navbar-nav {
+	display:block;
+}
+.navbar-right {
+	float: right !important;
+	margin-right: 15px;
+}
+.navbar-brand {
+	float: left;
+	height: 60px;
+	padding: 32px 15px;
+	font-size: 18px;
+	line-height: 20px;
+}
+.navbar-text {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.link {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	margin-right: 10px;
+}
+.center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 3em;
+}
+.navbar a.navbar-brand {
+	color: #fff;
+	font-family: Calibre-Semibold;
+	display: block;
+	width: 180px;
+	height: auto;
+}
+.navbar .navbar-brand img {
+	width: 100%;
+}
+.navbar-header {
+	color: #fff;
+}
+.navbar-header ul {
+	margin-right:15px;
+}
+.navbar-header ul li a.navbar-link {
+	color: #fff;
+	text-transform: uppercase;
+	font-family: calibre-semibold;
+	display: inline-block;
+	border: 2px solid #fff;
+	padding: 10px 12px 8px 12px;
+	margin-left: 10px;
+}
+.navbar-header ul li a {
+	color: #fff;
+	display: inline-block;
+}
+.navbar-header ul li a.navbar-link:hover {
+	text-decoration:none;
+}
+.navbar-header input[type="text"]{
+	border-bottom-left-radius: 2em;
+	border: none;
+	font-size: 15px;
+	color: #999;
+	padding: 1rem 1.5rem;
+	border-top-left-radius: 2em;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+div.circle-avatar{
+    max-width: 100%;
+    width:100%;
+    height:auto;
+    display:block;
+    padding-top:100%;
+    border-radius:50%;
+
+    background-position-y: center;
+    background-position-x: center;
+    background-repeat: no-repeat;
+    
+    background-size: cover;
+
+    /* it is optional, for making this div centered in parent*/
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    }
+
+.userImg{width: 50px;
+	width: 50px;
+	height: auto;
+	padding: 0;
+	margin: 0 10px 0 0;
+	line-height: 50px;
+	vertical-align: middle;
+	border: 2px solid #fff;
+	border-radius: 100%;
+}
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+	padding:0px;
+}
+.stylish-input-group .input-group-addon {
+    border: 0;
+    border-top-right-radius: 2em;
+    border-bottom-right-radius: 2em;
+	padding: 0.2em 0.5em 0.2em 0.5em;
+}
+.stylish-input-group .fa{
+	font-size:36px;
+	color:#ddd;
+}
+
+.sub-menu-parent { position: relative; }
+
+.sub-menu { 
+  visibility: hidden; /* hides sub-menu */
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-2em);
+  z-index: 2;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.sub-menu-parent:hover .sub-menu {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 2;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+nav.filterbar a { color: #2e2e2e; display: block; padding: 1em; text-decoration: none; font-family: calibre-semibold; }
+nav.filterbar a:hover { color: #000; }
+nav.filterbar ul,
+nav.filterbar ul li { list-style-type: none; padding: 0; margin: 0; }
+nav.filterbar ul li a .fa.fa-caret-down { font-size: 12px; margin-left:4px;}
+nav.filterbar ul li a .fa {margin-right:4px;}
+nav.filterbar > ul { background: #fff; text-align: center; }
+nav.filterbar > ul > li { display: inline-block; border-left: solid 1px #f2f2f2; }
+nav.filterbar > ul > li:last-child { border-right: solid 1px #f2f2f2; }
+
+.sub-menu {
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 7px -2px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 2px 7px -2px rgba(0,0,0,0.6);
+  box-shadow: 0px 2px 7px -2px rgba(0,0,0,0.6);
+}

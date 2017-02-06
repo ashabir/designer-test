@@ -1,4 +1,34 @@
-<div id="registration">
+<div class="registration-page">
+  <div class="form">
+    <form class="register-form" name="register">
+      <div class="input-group title">
+      Register for an account
+      </div>
+      <div class="input-group note">
+      <ngb-alert [dismissible]="false">
+        <strong>Note:</strong> A company code is required to sign up for InviteManager. Please contact your company InviteManager
+        admin to get your company code.
+      </ngb-alert>
+      </div>
+      <div class="input-group">
+      <input type="text" [(ngModel)]="companyCode" pattern="[a-zA-Z0-9]*" name="companyCode" placeholder="Company Code"/>
+      </div>
+      <div class="input-group">
+      <input type="text" [(ngModel)]="email" name="email" placeholder="E-mail Address"/>
+      </div>
+      <div class="checkbox checkbox-circle">
+          <input id="checkbox1" type="checkbox" [(ngModel)]="selected" (change)="checkbox(selected)" name="checkBoxRegister"> <label for="checkbox1">I have read and agrees to the <a [routerLink]="">Terms of Use</a></label>
+      </div>    
+      <div class="form-button">
+      <button [disabled]="isValid()" (click)="register()">Register</button>
+      </div>
+    </form>
+  </div>
+  <p class="message">Already Registered? <a [routerLink]="['/login']">Login here</a></p>
+</div>
+
+
+<!--div id="registration">
   <h3>Register for an account</h3>
   <div>
     <strong>Note:</strong> A company code is required to sign up for InviteManager. Please contact your company InviteManager
@@ -15,4 +45,4 @@
     Already Registered?
     <a [routerLink]="['/login']">Login here</a>
   </div>
-</div>
+</div-->

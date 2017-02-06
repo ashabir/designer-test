@@ -1,35 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
 /* BEGIN global styles */
+@font-face {
+	font-family: 'Calibre-Regular';
+	src: url('assets/fonts/Calibre-Regular.eot');
+	src: local('☺'), url('assets/fonts/Calibre-Regular.woff') format('woff'), url('assets/fonts/Calibre-Regular.ttf') format('truetype'), url('assets/fonts/Calibre-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Calibre-Light';
+	src: url('assets/fonts/Calibre-Light.eot');
+	src: local('☺'), url('assets/fonts/Calibre-Light.woff') format('woff'), url('assets/fonts/Calibre-Light.ttf') format('truetype'), url('assets/fonts/Calibre-Light.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Calibre-Semibold';
+	src: url('assets/fonts/Calibre-Semibold.eot');
+	src: local('☺'), url('assets/fonts/Calibre-Semibold.woff') format('woff'), url('assets/fonts/Calibre-Semibold.ttf') format('truetype'), url('assets/fonts/Calibre-Semibold.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/* END global styles */
+
+
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11.25px;
-    line-height: 13.25px;
-    letter-spacing: .02em;
-    color: #2e2e2e;
-	padding: 40px;
-}	
+	font-family: 'Calibre-Regular', Calibri, sans-serif;
+	font-size: 15px;
+	line-height: 15px;
+	letter-spacing: .02em;
+	color: #2e2e2e;
+	background: #f2f2f2 !important;
+}
+.help-block {
+	display: block;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #737373;
+}
+.has-success .checkbox, .has-success .checkbox-inline, .has-success .control-label, .has-success .help-block, .has-success .radio, .has-success .radio-inline, .has-success.checkbox label, .has-success.checkbox-inline label, .has-success.radio label, .has-success.radio-inline label {
+	color: #12aa16;
+}
+.form .has-success input {
+	margin: 0 !important;
+	border-color: #12aa16 !important;
+	color: #12aa16 !important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.has-warning .checkbox, .has-warning .checkbox-inline, .has-warning .control-label, .has-warning .help-block, .has-warning .radio, .has-warning .radio-inline, .has-warning.checkbox label, .has-warning.checkbox-inline label, .has-warning.radio label, .has-warning.radio-inline label {
+	color: #8a6d3b;
+}
+.form .has-warning input {
+	margin: 0 !important;
+	border-color: #8a6d3b !important;
+	color: #8a6d3b !important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error .help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label, .has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+	color: #eb1717;
+}
+.form .has-error input {
+	margin: 0 !important;
+	border-color: #eb1717 !important;
+	color: #eb1717 !important;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
 /* Below from style guide */
 .action {
-    background-color: #14e06e;
+	background-color: #14e06e;
 }
 a {
-    color: #1a87cc;
+	color: #1a87cc;
 }
 .companyOwned {
-    background-color: #ff9c00;
+	background-color: #ff9c00;
 }
 .text2 {
-    color: #999;
+	color: #999;
 }
 .error {
-    color: #eb1717;
+	color: #eb1717;
 }
 .success {
-    background-color: #12aa16;
+	background-color: #12aa16;
 }
-
 .formError {
-    color: #eb1717;
+	color: #eb1717;
 }
 /* END style Guide */

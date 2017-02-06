@@ -1,3 +1,130 @@
-#registration {
-    width: 300px;
+.registration-page {
+	width: 360px;
+	padding: 8% 0 0;
+	margin: auto;
+	text-align: center;
+}
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+.form .input-group {
+	padding: 0 36px;
+}
+.note {
+	text-align: left;
+	margin: 0 10%;
+	padding: 0px !important;
+	width: 80%;
+}
+.form .title {
+	font-family: "Calibre-Semibold", sans-serif;
+	color: #2e2e2e;
+	font-size: 18px;
+	padding: 25px 0;
+	text-align: center;
+	display: block;
+}
+.form input[type="text"] {
+	font-family: "Calibre-Regular", sans-serif;
+	outline: 0;
+	border: 1px solid #e1e1e1;
+	width: 100%;
+	margin: 0 0 15px;
+	padding: 12px 15px 8px 15px;
+	box-sizing: border-box;
+	font-size: 15px;
+	color: #999;
+}
+.form-button {
+	padding-top: 25px;
+}
+.form button {
+	font-family: "Calibre-Semibold", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #14e06e;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: .04em;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+.form button:hover, .form button:active, .form button:focus {
+	background: #11b358;
+}
+.registration-page .message a, .checkbox a {
+	color: #1a87cc;
+	text-decoration: none;
+	font-family: "Calibre-Semibold", sans-serif;
+}
+.checkbox label {
+	letter-spacing: initial;
+}
+.checkbox label {
+	display: inline-block;
+	position: relative;
+	font-size: 15px;
+}
+.checkbox label::before {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 19px;
+	height: 19px;
+	left: -7px;
+	top: -5px;
+	margin-left: -20px;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	background-color: #fff;
+	-webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+	-o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+	transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+	display: inline-block;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0;
+	top: -3px;
+	margin-left: -28px;
+	padding-left: 3px;
+	padding-top: 1px;
+	font-size: 12px;
+	color: #555555;
+}
+.checkbox input[type="checkbox"] {
+	opacity: 0;
+}
+.checkbox input[type="checkbox"]:focus + label::before {
+	outline: 0;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline: 0;
+}
+.checkbox input[type="checkbox"]:checked + label::after {
+	font-family: 'FontAwesome';
+	content: "\f00c";
+}
+.checkbox input[type="checkbox"]:disabled + label {
+	opacity: 0.65;
+}
+.checkbox input[type="checkbox"]:disabled + label::before {
+	background-color: #eeeeee;
+	cursor: not-allowed;
+}
+.checkbox.checkbox-circle label::before {
+	border-radius: 50%;
+}
+.checkbox.checkbox-inline {
+	margin-top: 0;
 }

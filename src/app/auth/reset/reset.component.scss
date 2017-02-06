@@ -1,0 +1,58 @@
+.reset-page {
+	width: 360px;
+	padding: 8% 0 0;
+	margin: auto;
+	text-align: center;
+}
+.form {
+	position: relative;
+	z-index: 1;
+	background: #FFFFFF;
+	max-width: 360px;
+	margin: 0 auto 20px;
+	text-align: left;
+}
+.form .input-group {
+	padding: 0 36px;
+	display:block;
+}
+.form .title {
+	font-family: "Calibre-Semibold", sans-serif;
+	color: #2e2e2e;
+	font-size: 18px;
+	padding: 25px 0;
+	text-align: center;
+	display: block;
+}
+.form input {
+	font-family: "Calibre-Regular", sans-serif;
+	outline: 0;
+	border: 1px solid #e1e1e1;
+	width: 100%;
+	margin: 0 0 15px;
+	padding: 12px 15px 8px 15px;
+	box-sizing: border-box;
+	font-size: 15px;
+	color: #999;
+}
+.form-button {
+	padding-top: 25px;
+}
+.form button {
+	font-family: "Calibre-Semibold", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #14e06e;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: .04em;
+	-webkit-transition: all 0.3 ease;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+.form button:hover, .form button:active, .form button:focus {
+	background: #11b358;
+}
